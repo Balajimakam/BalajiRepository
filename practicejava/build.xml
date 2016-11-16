@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="practicejava">
+    <property environment="env"/>
+    <property name="Excel_Operations.location" value="../Excel_Operations"/>
+    <property name="ECLIPSE_HOME" value="../../../../A551684/TAM/Testing Softwares/eclipse"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.5"/>
+    <property name="source" value="1.5"/>
+    <path id="practicejava.classpath">
+        <pathelement location="bin"/>
+        <pathelement location="../../../../A551684/TAM/Testing Softwares/Selenium/jxl-2.6.jar"/>
+        <pathelement location="../../../../A551684/TAM/Testing Softwares/Selenium/poi-3.9.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="practicejava.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects">
+        <ant antfile="build.xml" dir="${Excel_Operations.location}" inheritAll="false" target="clean"/>
+        <ant antfile="build.xml" dir="${Excel_Operations.location}" inheritAll="false" target="build">
+            <propertyset>
+                <propertyref name="build.compiler"/>
+            </propertyset>
+        </ant>
+    </target>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="Abstract_class">
+        <java classname="com.learning.Abstract_class" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="Abstract_main">
+        <java classname="com.learning.practice.Abstract_main" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="ArrayList_AddAll (1)">
+        <java classname="com.learning.Collections.ArrayList_AddAll" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="ArrayList_AddAll">
+        <java classname="com.learning.practice.ArrayList_AddAll" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="ArrayList_Removeall">
+        <java classname="com.learning.Collections.ArrayList_Removeall" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="A_LinkedHashSet">
+        <java classname="com.learning.Collections.A_LinkedHashSet" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="A_Linkedlist">
+        <java classname="com.learning.Collections.A_Linkedlist" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="A_Set">
+        <java classname="com.learning.Collections.A_Set" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="Child">
+        <java classname="com.learning.practice.Child" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="children">
+        <java classname="com.learning.practice.children" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="Collections">
+        <java classname="com.learning.practice.Collections" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="Conversions">
+        <java classname="string_functions.Conversions" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="CustomException_Sample">
+        <java classname="com.learning.ExceptionHandling.CustomException_Sample" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="Excel (1)">
+        <java classname="com.learning.Excel" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="ExceptionHandling_MethodOverriding_Unchecked">
+        <java classname="com.learning.ExceptionHandling.ExceptionHandling_MethodOverriding_Unchecked" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="ExceptionPropogation_Checked">
+        <java classname="com.learning.ExceptionHandling.ExceptionPropogation_Checked" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="ExceptionPropogation_Unchecked">
+        <java classname="com.learning.ExceptionHandling.ExceptionPropogation_Unchecked" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="Exception_MethodOverriding">
+        <java classname="com.learning.ExceptionHandling.Exception_MethodOverriding" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="ExtractDate">
+        <java classname="com.learning.ExceptionHandling.ExtractDate" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="FinalizeExample">
+        <java classname="com.learning.ExceptionHandling.FinalizeExample" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="Finally_Block">
+        <java classname="com.learning.ExceptionHandling.Finally_Block" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="Finally_keyword">
+        <java classname="com.learning.ExceptionHandling.Finally_keyword" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="HashMap_Operations">
+        <java classname="com.learning.Collections.HashMap_Operations" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="Hashset_Add">
+        <java classname="com.learning.Collections.Hashset_Add" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="HashTable_collections">
+        <java classname="com.learning.Collections.HashTable_collections" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="Inheritance">
+        <java classname="com.learning.Inheritance" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="jxl">
+        <java classname="com.learning.practice.jxl" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="LinkedHashMap_collection">
+        <java classname="com.learning.Collections.LinkedHashMap_collection" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="LinkedHashset_FWD_BWD">
+        <java classname="com.learning.Collections.LinkedHashset_FWD_BWD" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="ListIterator_FWD_BWD">
+        <java classname="com.learning.Collections.ListIterator_FWD_BWD" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="Map_Operations">
+        <java classname="com.learning.Collections.Map_Operations" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="MethodOverlaoding">
+        <java classname="com.learning.practice.MethodOverlaoding" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="MethodOverriding">
+        <java classname="com.learning.practice.MethodOverriding" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="Multicatch">
+        <java classname="com.learning.ExceptionHandling.Multicatch" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="NestedTry">
+        <java classname="com.learning.ExceptionHandling.NestedTry" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="Overriding">
+        <java classname="com.learning.Overriding" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="Propogation">
+        <java classname="com.learning.Propogation" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="Regex (1)">
+        <java classname="com.learning.ExceptionHandling.Regex" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="Regex">
+        <java classname="com.learning.Regex" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="Runner">
+        <java classname="com.learning.practice.Runner" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="Sample2010">
+        <java classname="com.learning.practice.Sample2010" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="String_class (1)">
+        <java classname="string_functions.String_class" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="String_class">
+        <java classname="com.learning.String_class" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="String_conversions">
+        <java classname="string_functions.String_conversions" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="Student">
+        <java classname="com.learning.Student" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="Thirddigit_fromlast">
+        <java classname="logics.Thirddigit_fromlast" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="Throw_keyword">
+        <java classname="com.learning.ExceptionHandling.Throw_keyword" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="TreeList">
+        <java classname="com.learning.Collections.TreeList" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="Try">
+        <java classname="com.learning.ExceptionHandling.Try" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="TwoWheelers">
+        <java classname="com.learning.practice.TwoWheelers" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="UserdefinedClass_ArrayList">
+        <java classname="com.learning.practice.UserdefinedClass_ArrayList" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+    <target name="Write_Excel">
+        <java classname="com.learning.Write_Excel" failonerror="true" fork="yes">
+            <classpath refid="practicejava.classpath"/>
+        </java>
+    </target>
+</project>
